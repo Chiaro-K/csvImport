@@ -1,6 +1,6 @@
 # Project
 
-[project.com](https://project.com)
+This project is an application that allows a user to upload a csv document into a database and then display the result onto the web page.
 
 ## Install
 
@@ -31,6 +31,7 @@ Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.co
 
 ```shell
 bundle && yarn
+bundle install
 ```
 ### Initialize the database
 
