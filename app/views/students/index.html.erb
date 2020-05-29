@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        <% @students.each do |student| %>
+        <% @students.order("studentNumber").each do |student| %>
             <tr>
                 <td><%= student.studentNumber %></td>
                 <td><%= student.firstName %></td>
