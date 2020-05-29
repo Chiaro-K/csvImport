@@ -9,9 +9,12 @@
 #  courseDescription    :string
 #  grade                :string
 #
+require 'csv'
+
 class Student < ApplicationRecord
     validates :studentNumber, presence: true
-    require 'csv'
+    validates :studentNumber, uniqueness: { scope: :courseCode }
+
     self.primary_key = "studentNumber"
 
     def self.import(file)
