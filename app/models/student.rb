@@ -10,6 +10,7 @@
 #  grade                :string
 #
 class Student < ApplicationRecord
+    validates :studentNumber, presence: true
     require 'csv'
     self.primary_key = "studentNumber"
 

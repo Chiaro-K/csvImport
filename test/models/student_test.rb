@@ -1,7 +1,14 @@
 require 'test_helper'
+require "csv"
 
 class StudentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save student without student number" do
+    student = Student.new
+    assert_not student.save, "Saves the student without student number"
+  end
+
+  test "should save with student number" do
+    student = Student.new({studentNumber: 987})
+    assert student.save, "Doesn't save student with student number"
+  end
 end
