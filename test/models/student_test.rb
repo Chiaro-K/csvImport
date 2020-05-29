@@ -1,5 +1,4 @@
 require 'test_helper'
-require "csv"
 
 class StudentTest < ActiveSupport::TestCase
   test "should not save student without student number" do
