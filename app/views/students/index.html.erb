@@ -1,2 +1,33 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<%= flash[:notice]%>
+<table>
+    <thead>
+        <tr>
+            <th>Student Number</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Course Code</th>
+            <th>Course Description</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @students.each do |student| %>
+            <tr>
+                <td><%= student.studentNumber %></td>
+                <td><%= student.firstName %></td>
+                <td><%= student.surname %></td>
+                <td><%= student.courseCode %></td>
+                <td><%= student.courseDescription %></td>
+                <td><%= student.grade %></td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
+
+<div>
+    <h4>Import Student Data</h4>
+    <%= form_tag import_students_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import CSV" %>
+    <%end%>
+</div>
