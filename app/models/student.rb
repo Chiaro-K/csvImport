@@ -16,7 +16,9 @@ class Student < ApplicationRecord
 
     def self.import(file)
         CSV.foreach(file.path, headers: true) do |row|
-            Student.create! row.to_hash
+            arr = row.to_s.split(';')
+            student = Student.new({studentNumber: arr[0], firstName: arr[1], surname: arr[2], courseCode: arr[3], courseDescription: arr[4], grade: arr[5]})
+            student.save
         end
     end
 end
