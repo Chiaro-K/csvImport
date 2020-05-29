@@ -9,9 +9,9 @@ one:
   grade: MyString
 
 two:
-  studentNumber: 1
+  studentNumber: 2
   firstName: MyString
   surname: MyString
-  courseCode: MyString
+  courseCode: MyString2
   courseDescription: MyString
   grade: MyString

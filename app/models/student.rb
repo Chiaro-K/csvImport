@@ -24,7 +24,7 @@ class Student < ApplicationRecord
         CSV.foreach(file.path, headers: true) do |row|
             arr = row.to_s.split(';')
             student = Student.new({studentNumber: arr[0], firstName: arr[1], surname: arr[2], courseCode: arr[3], courseDescription: arr[4], grade: arr[5]})
-            student.save
+            student.save!
         end
     end
 end
