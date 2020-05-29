@@ -10,5 +10,12 @@
 #  grade                :string
 #
 class Student < ApplicationRecord
+    require 'csv'
     self.primary_key = "studentNumber"
+
+    def self.import(file)
+        CSV.foreach(file.path, headers: true) do |row|
+            Student.create! row.to_hash
+        end
+    end
 end
