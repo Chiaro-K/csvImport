@@ -25,7 +25,16 @@ class Student < ApplicationRecord
         if file.present? and file.try(:path).present?
             CSV.foreach(file.path, headers: true) do |row|
                 arr = row.to_s.split(';')
-                student = Student.new({studentNumber: arr[0], firstName: arr[1], surname: arr[2], courseCode: arr[3], courseDescription: arr[4], grade: arr[5]})
+
+                student = Student.new({
+                    studentNumber: arr[0],
+                    firstName: arr[1], 
+                    surname: arr[2], 
+                    courseCode: arr[3], 
+                    courseDescription: arr[4], 
+                    grade: arr[5]
+                })
+                
                 if student.save
                     #storing the successful records in an array to display to the user when import is complete
                     records.push({student: student.studentNumber, course: student.courseCode})

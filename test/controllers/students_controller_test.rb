@@ -12,5 +12,4 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     post import_students_path({file: get_file})
     assert_redirected_to "/", "Did not redirect to home page"
   end
-
 end
