@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.scss, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+$green: #17b978;
+$purple: #263b5e;
+
+body {
+    & .nav-link {
+        color: #6a7695 !important;
+    }
+    & .navbar-brand {
+        color: #000000 !important;
+        font-weight: 900;
+        font-size: 26px;
+        position: relative;
+        z-index: 0;
+        font-family: "Raleway", sans-serif;
+
+        & span {
+            color: $green;
+        }
+    }
+
+    & #getstarted {
+        background-color: $green;
+        border-color: $green;
+        border-radius: 50px;
+    }
+
+    & .image {
+        position: absolute;
+        left: -70%;
+        height: 1000px;
+        top: -15%;
+    }
+    & .text {
+        & h1 {
+            color: $purple;
+            font-family: "Raleway", sans-serif;
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+        & p,
+        .table tbody tr td {
+            color: #6a7695;
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 400;
+            font-family: "Open Sans", sans-serif;
+        }
+        & .subheading {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            color: #17b978;
+            letter-spacing: 2px;
+        }
+
+        position: absolute;
+        top: 40%;
+        left: 10.5%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        right: 0;
+        max-width: 35%;
+        padding-left: 45px;
+        padding-right: 3em;
+    }
+
+    & table thead tr th {
+        color: $purple !important;
+    }
+
+    & .data-import {
+        float: right;
+        margin-top: 30px;
+
+        & input[type="submit"] {
+            background-color: $green;
+            border-color: $green;
+        }
+    }
+}
