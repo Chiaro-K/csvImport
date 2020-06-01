@@ -15,7 +15,11 @@
     </nav>
 </header>
 <main>
-    <%= flash[:notice]%>
+    <%
+=begin%>
+ <%= flash[:notice]%> 
+<%
+=end%>
     <div class="container-fluid px-0">
         <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end" style="height:670px;">
             <%= image_tag "students.png", class: "one-third js-fullheight align-self-end order-md-last img-fluid", style:"height: 600px;" %>
@@ -101,11 +105,11 @@
                     </div>
                     <!-- Table with panel -->
 
-                    <div>
+                    <div class="data-import">
                         <h4>Import Student Data</h4>
                         <%= form_tag import_students_path, multipart: true do %>
                         <%= file_field_tag :file %>
-                        <%= submit_tag "Import CSV" %>
+                        <%= submit_tag "Import CSV", class: "btn btn-primary" %>
                         <%end%>
                     </div>
                 </div>
