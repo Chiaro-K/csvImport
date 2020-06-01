@@ -1,42 +1,63 @@
-<%= flash[:notice]%>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark default-color">
-        <ul>
-            <li><a href="/">Home</a>
-        </ul>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Author<span>.</span></a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
 <main>
+    <%= flash[:notice]%>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <%= image_tag "student.png", class: "image" %>
 
-<table>
-    <thead>
-        <tr>
-            <th>Student Number</th>
-            <th>First Name</th>
-            <th>Surname</th>
-            <th>Course Code</th>
-            <th>Course Description</th>
-            <th>Grade</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @students.order("studentNumber").each do |student| %>
-            <tr>
-                <td><%= student.studentNumber %></td>
-                <td><%= student.firstName %></td>
-                <td><%= student.surname %></td>
-                <td><%= student.courseCode %></td>
-                <td><%= student.courseDescription %></td>
-                <td><%= student.grade %></td>
-            </tr>
-        <%end%>
-    </tbody>
-</table>
+            </div>
+            <div class="col-lg-8">
+                <div class="table-wrapper">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Student Number</th>
+                                <th>First Name</th>
+                                <th>Surname</th>
+                                <th>Course Code</th>
+                                <th>Course Description</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @students.order("studentNumber").each do |student| %>
+                            <tr>
+                                <td><%= student.studentNumber %></td>
+                                <td><%= student.firstName %></td>
+                                <td><%= student.surname %></td>
+                                <td><%= student.courseCode %></td>
+                                <td><%= student.courseDescription %></td>
+                                <td><%= student.grade %></td>
+                            </tr>
+                            <%end%>
+                        </tbody>
+                    </table>
 
-<div>
-    <h4>Import Student Data</h4>
-    <%= form_tag import_students_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Import CSV" %>
-    <%end%>
-</div>
+                    <div>
+                        <h4>Import Student Data</h4>
+                        <%= form_tag import_students_path, multipart: true do %>
+                        <%= file_field_tag :file %>
+                        <%= submit_tag "Import CSV" %>
+                        <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
