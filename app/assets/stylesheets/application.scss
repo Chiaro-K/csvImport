@@ -47,6 +47,9 @@ body {
         height: 1000px;
         top: -15%;
     }
+    & .main-img {
+        height: 600px;
+    }
     & .text {
         & h1 {
             color: $purple;
@@ -94,6 +97,59 @@ body {
         & input[type="submit"] {
             background-color: $green;
             border-color: $green;
+        }
+    }
+}
+
+@media only screen and (max-width: 1550px) {
+    body {
+        & .main-img {
+            height: 520px;
+        }
+    }
+}
+@media only screen and (max-width: 1308px) {
+    body {
+        & .main-img {
+            height: 450px;
+        }
+        & .text {
+            left: 5.5%;
+            top: 34%;
+
+            & h1 {
+                font-size: 40px;
+            }
+            & .subheading {
+                font-size: 10px;
+            }
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    body {
+        & .main-img {
+            height: 400px;
+        }
+        & .text {
+            top: 31%;
+
+            & h1 {
+                font-size: 35px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 400px) {
+    body {
+        & .main-img {
+            height: 300px;
+        }
+        & .text {
+            top: 26% !important;
         }
     }
 }
